@@ -1,0 +1,29 @@
+.button {
+    background-color: azure;
+    margin: auto;
+}
+
+.button:hover{
+    background-color: rgb(231, 143, 172); 
+}
+
+.button:active {
+    background-color: green; 
+}
+
+.danger {
+    padding: 5px;
+    margin: 10px;
+    border: 3px solid red;
+}
+
+.span-value{
+    height: 100px;
+    width: 150px;
+    background-color: greenyellow;
+    padding: 2px solid blue;
+    margin: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    align-self: auto;
+}
