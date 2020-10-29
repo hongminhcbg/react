@@ -1,0 +1,17 @@
+[
+    {
+        "email": "minhnh21@minhnh21.com",
+        "email_verified": false,
+        "custom_password_hash": {
+            "algorithm": "sha256",
+            "hash": {
+                "value": "176ACA121D961E15DDDF2E5739D3769EF7891E2B28F929D67B467A20AEBE0D72",
+                "encoding": "hex"
+            },
+            "salt": {
+                "value": "minhnh21",
+                "position": "prefix"
+            }
+        }
+    }
+]

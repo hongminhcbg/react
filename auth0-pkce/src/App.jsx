@@ -1,43 +1,36 @@
 import React, { Component } from 'react';  
 import Login from './Login'
-import Callback from './Callback'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";  
+import Logout from './Logout'
 
 class App extends Component {
 
   constructor(props){  
     super(props);  
-    this.state = {  
-         data: 'www.javatpoint.com',
-         AUTH0_CLIENT_ID: 'L1kcm7d2Ty6EIMUmxxUicMWuAsOBo64F',
-         AUTH0_DOMAIN: 'dev-1czz2eel.us.auth0.com',
-         REDIRECT_URI: 'http://localhost:3000/callback',
-         API_AUDIENCE: 'https://dev-1czz2eel.us.auth0.com/api/v2/',   
-         AuthEndPoint: 'https://dev-1czz2eel.us.auth0.com/authorize',   
-        }
-         
-    this.handleEvent = function(){
-      alert('clicked');
-    }
+    this.state = this.getConfig();
+    console.log(this.state);         
   } 
+
+  getConfig = () => {
+    return (
+      {
+        clientID: process.env.REACT_APP_CLIENT_ID,
+        auth0Domain: process.env.REACT_APP_AUTH0_DOMAIN,
+        redirectURI: process.env.REACT_APP_REDIRECT_URI,
+        apiAudience: process.env.REACT_APP_API_AUDIENCE,
+        authEndpoint: process.env.REACT_APP_AUTH_ENDPOINT,
+        tokenEndpoint: process.env.REACT_APP_TOKEN_ENDPOINT,
+        logoutURL: process.env.REACT_APP_LOGOUT_URL,
+        homeURL: process.env.REACT_APP_HOME,
+      }
+    )
+  }
 
   render() {  
     return (
       <div className="App">  
         <h2>React PKCE Flow Example</h2>  
-        <Router>
-          <Switch>
-
-            <Route path="/" component={() => <Login state={this.state}/>} /> 
-            <Route path="/callback"  component={() => <Callback />}/> 
-
-          </Switch>
-        </Router>  
+        <Login state={this.state}/>
+        <Logout clientID={this.state.clientID} redirectTo={this.state.homeURL} logoutURL={this.state.logoutURL}/>
     </div>
     );  
   }  
