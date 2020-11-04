@@ -2,7 +2,8 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Link
 } from "react-router-dom";
 
 import { useAuth0 } from '@auth0/auth0-react';
@@ -39,11 +40,19 @@ const App = () => {
     <div className="App">
       <h1> This is header </h1>
       <Router>
+        <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/profile">Profile</Link>
+            </li>
+        </ul>      
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/profile" component={Profile} />
         </Switch>
-        </Router>
+      </Router>
     </div>
   );
 }

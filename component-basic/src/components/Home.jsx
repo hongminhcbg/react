@@ -13,8 +13,6 @@ const Home = () => {
         return (
             <div>
                 <h2> Login success </h2>
-                <img src={user.picture} alt='avatar' />
-                <h2> {JSON.stringify(user)} </h2>
                 <button onClick={logout}> Logout </button>
             </div>
         )

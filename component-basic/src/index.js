@@ -5,11 +5,27 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from "@auth0/auth0-react";
 
+const getConfig = () => {
+  return (
+    {
+      clientID: process.env.REACT_APP_CLIENT_ID,
+      auth0Domain: process.env.REACT_APP_AUTH0_DOMAIN,
+      redirectURI: process.env.REACT_APP_REDIRECT_URI,
+      apiAudience: process.env.REACT_APP_API_AUDIENCE,
+      authEndpoint: process.env.REACT_APP_AUTH_ENDPOINT,
+      tokenEndpoint: process.env.REACT_APP_TOKEN_ENDPOINT,
+      logoutURL: process.env.REACT_APP_LOGOUT_URL,
+      homeURL: process.env.REACT_APP_HOME,
+    }
+  )
+}
+
+
 ReactDOM.render(
   <Auth0Provider
-    domain='dev-1czz2eel.us.auth0.com'
-    clientId='L1kcm7d2Ty6EIMUmxxUicMWuAsOBo64F'
-    audience='https://dev-1czz2eel.us.auth0.com/api/v2/'
+    domain={getConfig().auth0Domain}
+    clientId={getConfig().clientID}
+    audience={getConfig().apiAudience}
     redirectUri={window.location.origin}
     onRedirectCallback='${window.location.origin}/callback'
   >
