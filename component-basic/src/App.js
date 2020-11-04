@@ -5,31 +5,44 @@ import {
   Route
 } from "react-router-dom";
 
-import Users from './Users'
-function Home() {
-  return <h2>Home</h2>;
+import { useAuth0 } from '@auth0/auth0-react';
+import Home from './components/Home'
+import Profile from './components/profile'
+
+const loading = () => {
+  return (
+    <h2> Loading </h2>
+  )
 }
 
-function About() {
-  return <h2>About</h2>;
+const showError = (message) => {
+  return (
+    <h2> Error {message} </h2>
+  )
 }
 
-function App() {
+const App = () => {
+  const {
+    isLoading,
+    error,
+  } = useAuth0();
+  
+  if (isLoading) {
+    return loading()
+  }
+
+  if(error) {
+    return showError(error.message)
+  }
+
   return (
     <div className="App">
       <h1> This is header </h1>
       <Router>
         <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/users">
-              <Users />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/profile" component={Profile} />
+        </Switch>
         </Router>
     </div>
   );
