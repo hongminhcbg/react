@@ -7,8 +7,9 @@ import {
 } from "react-router-dom";
 
 import { useAuth0 } from '@auth0/auth0-react';
-import Home from './components/Home'
-import Profile from './components/profile'
+import Home from './components/Home';
+import Profile from './components/profile';
+import Token from './components/token';
 
 const loading = () => {
   return (
@@ -47,10 +48,14 @@ const App = () => {
             <li>
               <Link to="/profile">Profile</Link>
             </li>
+            <li>
+              <Link to="/token">Token</Link>
+            </li>
         </ul>      
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/profile" component={Profile} />
+          <Route path="/token" component={Token} />
         </Switch>
       </Router>
     </div>
