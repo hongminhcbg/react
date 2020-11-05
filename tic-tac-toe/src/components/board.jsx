@@ -28,6 +28,7 @@ class Board extends React.Component {
         this.state = {
             squares: Array(9).fill(null),
             xIsNext: true,
+            winner: null,
         }
     }
     
@@ -49,7 +50,7 @@ class Board extends React.Component {
 
     handleClick = (index) => {
         const squares = this.state.squares.slice();
-        if (this.calculateWinner(squares) || squares[index]) {
+        if (this.state.winner || squares[index]) {
             return
         }
 
@@ -60,16 +61,28 @@ class Board extends React.Component {
         });    
     }
 
-    congratulations = (player) => {
-        alert('Winner is: ' + player);
-    }
-
     render(){
+        if (this.state.winner) {
+            setTimeout(() => {
+                this.setState({
+                    squares: Array(9).fill(null),
+                    xIsNext: true,
+                    winner: null,
+                })                        
+            }, 1000)
+            return (
+                <div>
+                    <h2> Winner is {this.state.winner}, game will auto reset </h2> 
+                </div>
+            )
+        }
+
         const winner = this.calculateWinner(this.state.squares);
         let status;
         if (winner) {
-        //   this.congratulations(winner);  
-        //   this.resetGame();
+            this.setState({
+                winner: winner,
+            })
         } else {
           status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
         }
@@ -96,8 +109,9 @@ class Board extends React.Component {
         )
     }
 
-    componentDidMount(){
 
+    componentDidMount(){
+        console.log('did mount');
     }
 }
 
