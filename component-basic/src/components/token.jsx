@@ -1,66 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
 import { useAuth0 } from '@auth0/auth0-react';
-
-// class TokenInformation extends React.Component {
-
-//     constructor(props) {   
-//         super(props);
-//         this.state = {
-//             accessTokken: null,
-//             idToken: null,
-//             status: 'Loading token',
-//         }
-//     }
-
-//     render(){
-//         const {
-//             isAuthenticated,   
-//             getAccessTokenSilently,
-//             getIdTokenClaims,
-//         } = useAuth0();
-
-//         if(!isAuthenticated) {
-//             return
-//         }
-
-//         getAccessTokenSilently().then(
-//             (result) => {
-//                 this.setState({
-//                     accessToken: result, 
-//                 })
-//             }
-//         ).catch(
-//             (error) => {
-//                 this.setState({
-//                     accessToken: error, 
-//                 })  
-//             }
-//         )
-
-//         getIdTokenClaims().then(
-//             (result) => {
-//                 this.setState({
-//                     idToken: result, 
-//                 })
-//             }
-//         ).catch(
-//             (error) => {
-//                 this.setState({
-//                     idToken: error, 
-//                 })  
-//             }
-//         )
-
-//         return (
-//             <div>
-//                 <h1> {this.state.status} </h1>
-//                 <h2> {JSON.stringify(this.state.accessToken)} </h2>
-//                 <h2> {JSON.stringify(this.state.idToken)} </h2>
-//             </div>
-//         );    
-//     }
-// }
-
 
 const TokenInformation = () => {
     const {
@@ -69,22 +9,46 @@ const TokenInformation = () => {
         getIdTokenClaims,
     } = useAuth0();
 
-    getAccessTokenSilently().then(
-        (result) => {
-            console.log('success', JSON.stringify(result));
-            return (
-                <h2> {JSON.stringify(result)} </h2>
-            );
-        }
-    ).catch (
-        (error) => {
-            console.log('error');
-            return <h2> Error {error.message} </h2>;                
-        }
-    )
+    const [data, setData] = useState(null); 
+    const [idToken, setIDToken] = useState(null); 
 
-    console.log('returned');
-    return null
-}
+    useEffect(() => {
+        (async () => {
+        try {
+            const token = await getAccessTokenSilently();
+         setData(token);
+        } catch (e) {
+            console.error(e);
+          }
+        })();
+    }, [getAccessTokenSilently]);
+
+    useEffect(() => {
+        (async () => {
+        try {
+            const token = await getIdTokenClaims();
+            setIDToken(token);
+        } catch (e) {
+            console.error(e);
+          }
+        })();
+    }, [getIdTokenClaims]);
+
+    if (!isAuthenticated) {
+        return <div>Loading...</div>;
+      }
+    
+      return (
+          <div> 
+              <h1> Access Token <br/> </h1>
+              <h2> {JSON.stringify(data)} </h2>
+              
+              <br/>
+              <br/>
+              <h1> ID Token </h1>  
+              <h2> {JSON.stringify(idToken)} </h2>
+          </div>
+      );
+};
 
 export default TokenInformation;

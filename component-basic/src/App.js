@@ -27,6 +27,8 @@ const App = () => {
   const {
     isLoading,
     error,
+    getAccessTokenSilently,
+    getIdTokenClaims,
   } = useAuth0();
   
   if (isLoading) {
