@@ -21,6 +21,7 @@ class Board extends React.Component {
         squares[a] === squares[b] &&
         squares[a] === squares[c]
       ) {
+        console.log('winner is ' + squares[a]);
         return squares[a];
       }
     }
