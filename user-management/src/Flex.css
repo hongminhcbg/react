@@ -1,0 +1,28 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container-chilli {
+    display: flex;
+    flex-direction: column;
+}
+
+.normal-inside-flex {
+    border: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.background-apple {
+    background-color: greenyellow;
+}
+
+.background-chilli {
+    background-color: red;
+}
+
+.background-orange {
+    background-color: orange;
+}
+

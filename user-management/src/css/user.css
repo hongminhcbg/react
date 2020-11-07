@@ -1,0 +1,15 @@
+.user-avatar {
+    border-radius: 50%;
+}
+
+.user-background {
+    background-color: palegoldenrod;
+    height: 200px;
+    width: 500px;
+}
+
+.user-base {
+    margin: 0px;
+    border: 1px;
+    padding: 1px;
+}
