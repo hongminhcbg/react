@@ -71,6 +71,11 @@
 
 }
 
+.square:hover {
+  transform: scale(.95);
+  transition: all .4s ease-out;
+}
+
 .square:focus {
   outline: none;
 }
