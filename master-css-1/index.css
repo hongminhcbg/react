@@ -1,0 +1,33 @@
+body {
+    background-color: antiquewhite;
+}
+
+.base-component {
+    margin: 3px 10% 3px 3px;
+    border: 2px solid green;
+    padding: 3px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.img {
+    border-radius: 50%;
+    width: 10%;
+}
+
+.container {
+    position: relative;
+    width: 33%;
+    max-width: 800px;
+    background-color: greenyellow;
+}
+  
+.button {
+    margin: 0px 0px;
+    position: relative;
+    left: 50%;
+    width: 50%;
+}
