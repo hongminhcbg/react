@@ -1,0 +1,62 @@
+body {
+    background-color: aquamarine;
+}
+
+.container {
+    height: 200px;
+    width: 340px;
+}
+
+.base-component {
+    border: 3px solid black;
+    height: auto;
+    width: 20%;
+}
+
+.margin-left {
+    margin-left: 0px;
+}
+
+.margin-right {
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.div-height-33 {
+    width: auto;
+    height: 33%;
+}
+
+.picture {
+    height: auto;
+    width: 60%;
+    border-radius: 50%;
+}
+
+.background-chilli {
+    background-color: #d00000;
+}
+
+.background-apple {
+    background-color: greenyellow;
+}
+
+.background-orange {
+    background-color: orange;
+}
+
+.button {
+    height: 100%;
+    width: 100%;
+    font-size: 10px;
+}

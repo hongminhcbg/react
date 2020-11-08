@@ -1,0 +1,34 @@
+.user-avatar {
+    border-radius: 50%;
+    width: 50%;
+    height: auto;
+    margin-right: 0px;
+    left: 50%; 
+    float: right;
+}
+
+.user-container {
+    background-color: palegoldenrod;
+    height: 200px;
+    width: 33%;
+    display: flex;
+    flex-direction: row;
+}
+
+.user-profile {
+    height: auto;
+    width: 50%;
+    font-size: larger;
+}
+
+.user-button {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.user-base {
+    margin: 0px;
+    border: 1px;
+    padding: 1px;
+}
