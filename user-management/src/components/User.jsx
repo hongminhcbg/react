@@ -2,17 +2,19 @@ import '../css/user.css'
 import '../Flex.css'
 const User = (props) => {
     return (
-        <div className="user-background flex-container">
-        <img 
-            src= {props.Src} 
-            alt="avatar" 
-            className="user-avatar user-base" 
-            height="200px" 
-            width="200px"
-        />
-        <p> Name: {props.FullName} </p>
-        <button onClick={props.HandlerOnlick}> Edit </button>
-    </div>
+        <div>
+            <div className="user-container">
+                <img 
+                    src= {props.Src} 
+                    alt="avatar" 
+                    className="user-avatar" 
+                />
+                <p> Name: {props.FullName} </p>
+            </div>
+            <div>
+                <button className="user-button" onClick={props.HandlerOnlick}> Edit profile </button>
+            </div>
+        </div>
 )
 }
 
