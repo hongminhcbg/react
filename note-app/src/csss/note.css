@@ -1,0 +1,53 @@
+.note-container {
+    background-color: aliceblue;
+    height: 200px;
+    width: 340px;
+}
+
+.note-text {
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    height: auto;
+    width: 90%;
+}
+
+.base {
+    margin: 2px;
+}
+
+.width-10 {
+    width: 10%;
+}
+
+.note-button {
+    width: auto;
+    height: 10%;
+}
+
+.note-button:hover {
+    background-color: azure;
+}
+
+.note-button:active {
+    background-color: #eeff00;
+}
+
+
+.note-button-done {
+    background-color: green;
+}
+
+.note-button-exit {
+    background-color: red;
+}
+
+.note-input {
+    height: 100%;
+    width: 100%;
+}
+
+.note-text-area{
+    height: 100%;
+    width: 100%;
+}
