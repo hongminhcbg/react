@@ -1,0 +1,63 @@
+.task-container{
+    border: 2px solid black;
+    margin: 10px;
+    width: auto;
+    height: 50%;
+}
+
+.tasks-container{
+    height: 300px;
+    width: 510px;
+}
+
+.task-content{
+    flex: 9;
+}
+
+.task-left-side {
+    flex: 1;
+}
+
+.task-left-side > button {
+    background-color: red;
+}
+
+.options-to-do {
+    background-color: rgba(230, 216, 216, 0.5);
+}
+
+.options-in-progress {
+    background-color: rgba(19, 5, 202, 0.5);
+}
+
+.options-close {
+    background-color: rgba(12, 233, 49, 0.877);
+}
+
+.options-pending {
+    background-color: rgba(214, 236, 11, 0.781);
+}
+
+.options-absolute {
+    background-color: rgba(15, 250, 7, 0.781);
+}
+
+.task-left-side > select > option[value="4"] {
+    background: rgba(10, 255, 30, 0.8);
+}
+
+.task-left-side > select > option[value="3"] {
+    background: rgba(10, 255, 30, 0.5);
+}
+
+.task-left-side > select > option[value="2"] {
+    background: yellow;
+}
+
+.task-left-side > select > option[value="1"] {
+    background: blue;
+}
+
+.task-left-side > select > option[value="0"] {
+    background: rgba(150, 150, 150, 0.5);
+}
