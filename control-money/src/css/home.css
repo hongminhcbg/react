@@ -1,0 +1,18 @@
+.container-tab{
+    flex: 1;
+    width: 300px;
+}
+
+.container-tab > button {
+    width: 170px;
+    margin: 20px;
+    border: 2px solid green;
+}
+
+.container-tab > button:active {
+    background-color: aquamarine;
+}
+
+.container-tab > button:hover {
+    background-color: rgb(235, 206, 218);
+}
